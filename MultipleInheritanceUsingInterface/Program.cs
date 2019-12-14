@@ -43,7 +43,7 @@ namespace MultipleInheritanceUsingInterface
       }*/
 
     //example 2
-    public interface Interface1
+    /*public interface Interface1
     {
         void Test();
         void Show();
@@ -89,6 +89,35 @@ namespace MultipleInheritanceUsingInterface
             obj2.Test();
             obj2.Show();
             Console.WriteLine("Press any key to exist.");
+            Console.ReadKey();
+        }
+    }
+    */
+
+    //example 3
+    interface Car
+    {
+        void Drive();
+    }
+    interface Bus
+    {
+        void Drive();
+    }
+    class Demo : Car, Bus
+    {
+        void Car.Drive()
+        {
+            Console.WriteLine("Drive Car");
+        }
+        void Bus.Drive()
+        {
+            Console.WriteLine("Drive Bus");
+        }
+        static void Main()
+        {
+            Demo DemoObject = new Demo();
+            ((Car)DemoObject).Drive();
+            ((Bus)DemoObject).Drive();
             Console.ReadKey();
         }
     }
